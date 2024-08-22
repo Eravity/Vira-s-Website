@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getCabinPrice } from '../others/data-service';
+import { getCabinPrice } from '../../app/_lib/data-service';
 
 type PriceProps = {
   cabinId: number;

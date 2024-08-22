@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function Navigation() {
+const Navigation: React.FC = () => {
   return (
     <ul>
       <li>
@@ -17,4 +17,6 @@ export default function Navigation() {
       </li>
     </ul>
   );
-}
+};
+
+export default Navigation;

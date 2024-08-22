@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getCountries } from '../others/data-service';
+import { getCountries } from '../../app/_lib/data-service';
 
 type Country = {
   name: string;

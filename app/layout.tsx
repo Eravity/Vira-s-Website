@@ -1,11 +1,16 @@
-import Logo from "./components/Logo";
-import Navigation from "./components/Navigation";
+import Logo from "./_components/Logo";
+import Navigation from "./_components/Navigation";
+import { ReactNode } from "react";
 
 export const metadata = {
   title: "The Wild Oasis",
 };
 
-export default function RootLayout({ children }) {
+type Layout = {
+  children: ReactNode;
+};
+
+export default function RootLayout({ children }: Layout) {
   return (
     <html lang="en">
       <body>
