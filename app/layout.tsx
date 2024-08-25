@@ -3,7 +3,7 @@ import Navigation from "./_components/Navigation";
 import { ReactNode } from "react";
 
 export const metadata = {
-  title: "The Wild Oasis",
+  title: "Vira's Balcony",
 };
 
 type Layout = {
@@ -19,7 +19,7 @@ export default function RootLayout({ children }: Layout) {
           <Navigation />
         </header>
         <main>{children}</main>
-        <footer>Copyright by The Wild Oasis</footer>
+        <footer>Copyright by Vira&apos;s Balcony</footer>
       </body>
     </html>
   );
