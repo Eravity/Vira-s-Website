@@ -1,4 +1,8 @@
-import ReservationCard from "../components/ReservationCard";
+import ReservationCard from "@/app/_components/ReservationCard";
+
+export const metadata = {
+  title: "Reservations",
+};
 
 type Booking = {
   id: number;
@@ -16,8 +20,8 @@ type Booking = {
   };
 };
 
-const page: React.FC = () => {
-  const bookings: Booking[] = []; 
+const Page: React.FC = () => {
+  const bookings: Booking[] = [];
 
   return (
     <div>
@@ -43,4 +47,4 @@ const page: React.FC = () => {
   );
 };
 
-export default page;
+export default Page;

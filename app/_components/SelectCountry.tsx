@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { getCountries } from '../../app/_lib/data-service';
+"use client";
+import React, { useEffect, useState } from "react";
+import { getCountries } from "../../app/_lib/data-service";
 
 type Country = {
   name: string;
@@ -13,7 +14,12 @@ type SelectCountryProps = {
   className: string;
 };
 
-const SelectCountry: React.FC<SelectCountryProps> = ({ defaultCountry, name, id, className }) => {
+const SelectCountry: React.FC<SelectCountryProps> = ({
+  defaultCountry,
+  name,
+  id,
+  className,
+}) => {
   const [countries, setCountries] = useState<Country[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -24,7 +30,7 @@ const SelectCountry: React.FC<SelectCountryProps> = ({ defaultCountry, name, id,
         const data = await getCountries();
         setCountries(data);
       } catch (err) {
-        setError('Failed to load countries');
+        setError("Failed to load countries");
       } finally {
         setLoading(false);
       }
@@ -38,7 +44,8 @@ const SelectCountry: React.FC<SelectCountryProps> = ({ defaultCountry, name, id,
   if (error) return <p>{error}</p>;
 
   // Find the flag for the default country
-  const flag = countries.find((country) => country.name === defaultCountry)?.flag ?? '';
+  const flag =
+    countries.find((country) => country.name === defaultCountry)?.flag ?? "";
 
   return (
     <select
@@ -47,7 +54,7 @@ const SelectCountry: React.FC<SelectCountryProps> = ({ defaultCountry, name, id,
       defaultValue={`${defaultCountry}%${flag}`}
       className={className}
     >
-      <option value=''>Select country...</option>
+      <option value="">Select country...</option>
       {countries.map((c) => (
         <option key={c.name} value={`${c.name}%${c.flag}`}>
           {c.name}

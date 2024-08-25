@@ -1,8 +1,9 @@
 import React from "react";
 import { PencilSquareIcon } from "@heroicons/react/24/solid";
 import { format, isPast, isToday } from "date-fns";
-import { formatDistanceFromNow } from "../utils/utils";
-import DeleteReservation from "./DeleteReservation";
+// import { formatDistanceFromNow } from "../utils/utils";
+import DeleteReservation from "@/app/_components/DeleteReservation";
+import Image from "next/image";
 
 // Define Cabin type
 type Cabin = {
@@ -44,7 +45,7 @@ const ReservationCard: React.FC<ReservationCardProps> = ({ booking }) => {
   return (
     <div className="flex border border-primary-800">
       <div className="relative h-32 aspect-square">
-        <img
+        <Image
           src={image}
           alt={`Cabin ${name}`}
           className="object-cover border-r border-primary-800"

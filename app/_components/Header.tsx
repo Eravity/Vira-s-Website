@@ -1,4 +1,4 @@
-import Navigation from "./Navigation";
+import Navigation from "@/app/_components/Navigation";
 import Logo from "./Logo";
 
 const Header: React.FC = (): JSX.Element => {

@@ -1,7 +1,9 @@
-const page: React.FC = () => {
+import Image from "next/image";
+
+const Page: React.FC = () => {
   return (
     <main className="mt-24">
-      <img src="/bg.png" alt="Mountains and forests with two cabins" />
+      <Image src="/bg.png" alt="Mountains and forests with two cabins" />
 
       <div className="relative z-10 text-center">
         <h1 className="text-8xl text-primary-50 mb-10 tracking-tight font-normal">
@@ -18,4 +20,4 @@ const page: React.FC = () => {
   );
 };
 
-export default page;
+export default Page;

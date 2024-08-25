@@ -1,4 +1,10 @@
 import Image from "next/image";
+import about1 from "@/public/about-1.jpg";
+import about2 from "@/public/about-2.jpg";
+
+export const metadata = {
+  title: "About",
+};
 
 const Page: React.FC = (): JSX.Element => {
   return (
@@ -32,13 +38,20 @@ const Page: React.FC = (): JSX.Element => {
 
       <div className="col-span-2">
         <Image
-          src="/about-1.jpg"
+          src={about1}
           alt="Family sitting around a fire pit in front of cabin"
+          placeholder="blur"
+          quality={50}
         />
       </div>
 
       <div className="col-span-2">
-        <Image src="/about-2.jpg" alt="Family that manages The Wild Oasis" />
+        <Image
+          src={about2}
+          placeholder="blur"
+          alt="Family that manages The Wild Oasis"
+          quality={50}
+        />
       </div>
 
       <div className="col-span-3">

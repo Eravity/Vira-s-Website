@@ -1,4 +1,4 @@
-import CabinCard from "../components/CabinCard";
+import CabinCard from "../../app/_components/CabinCard";
 
 interface Cabin {
   id: number;
