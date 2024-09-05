@@ -1,12 +1,19 @@
 import { eachDayOfInterval } from "date-fns";
-import supabase from "../../starter/others/supabase"; // Importing your existing Supabase client
+import supabase from "@/app/_lib/supabase"; // Importing your existing Supabase client
+import { notFound } from "next/navigation";
 
-interface Cabin {
+// Actualizare a tipurilor folosind `type`
+export type Cabin = {
+  id: number;
   name: string;
+  maxCapacity: number;
+  regularPrice: number;
+  discount: number;
+  description: string;
   image: string;
-}
+};
 
-interface Booking {
+export type Booking = {
   id: number;
   created_at: string;
   startDate: string;
@@ -16,23 +23,20 @@ interface Booking {
   totalPrice: number;
   guestId: number;
   cabinId: number;
-  cabins: Cabin[]; // Adjusted to be an array of Cabin objects
-}
+  cabins: Cabin[];
+};
 
-interface Guest {
+export type Guest = {
   id: number;
   email: string;
-  // Add other fields as necessary
-}
+};
 
-interface Settings {
-  // Define the shape of settings data
-}
+export type Settings = {};
 
-interface Country {
+export type Country = {
   name: string;
   flag: string;
-}
+};
 
 export async function getCabin(id: number): Promise<Cabin | null> {
   const { data, error } = await supabase
@@ -42,8 +46,7 @@ export async function getCabin(id: number): Promise<Cabin | null> {
     .single();
 
   if (error) {
-    console.error(error);
-    return null;
+    notFound();
   }
 
   return data as Cabin;
@@ -235,5 +238,4 @@ export async function deleteBooking(id: number): Promise<void> {
     console.error(error);
     throw new Error("Booking could not be deleted");
   }
-  // No need to return data since delete usually does not return the deleted row
 }
